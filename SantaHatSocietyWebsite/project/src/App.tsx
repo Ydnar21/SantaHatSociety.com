@@ -501,7 +501,7 @@ function App() {
             
             <div className="text-center md:text-left">
               <p className="text-xs sm:text-sm text-gray-400 px-4 md:px-0">
-                © 2024 Santa Hat Society. All rights reserved. | 501(c)(3) Non-Profit Organization
+                © 2011 Santa Hat Society. All rights reserved. | 501(c)(3) Non-Profit Organization
               </p>
             </div>
           </div>
