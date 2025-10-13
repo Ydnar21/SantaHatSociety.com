@@ -51,7 +51,7 @@ function App() {
     },
     {
       id: 7,
-      src: "/emilyandjoshallen.jpg",
+      src: "/joshallen.jpg",
       alt: "Josh Allen",
       caption: "Josh Allen!!!!"
     },
