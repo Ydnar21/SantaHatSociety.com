@@ -199,19 +199,28 @@ function App() {
           <div className="sm:hidden bg-white/95 backdrop-blur-md border-t w-full">
             <nav className="px-4 py-4 space-y-4">
               <button
-                onClick={navigateToHome}
+                onClick={() => {
+                  navigateToHome();
+                  setIsMenuOpen(false);
+                }}
                 className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
               >
                 Home
               </button>
               <button
-                onClick={() => setCurrentPage('about')}
+                onClick={() => {
+                  setCurrentPage('about');
+                  setIsMenuOpen(false);
+                }}
                 className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
               >
                 About
               </button>
               <button
-                onClick={() => setCurrentPage('events')}
+                onClick={() => {
+                  setCurrentPage('events');
+                  setIsMenuOpen(false);
+                }}
                 className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
               >
                 Events
