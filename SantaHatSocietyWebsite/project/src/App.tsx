@@ -8,8 +8,15 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'events'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'events'>(() => {
+    const savedPage = sessionStorage.getItem('currentPage');
+    return (savedPage as 'home' | 'about' | 'events') || 'home';
+  });
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    sessionStorage.setItem('currentPage', currentPage);
+  }, [currentPage]);
 
   // Sample photos - replace with actual organization photos
   const photos = [
