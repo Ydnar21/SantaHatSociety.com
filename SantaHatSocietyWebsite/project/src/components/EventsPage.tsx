@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { ArrowLeft, Calendar, MapPin, Clock, Users, Gift, Heart } from 'lucide-react';
+import { ArrowLeft, Calendar, MapPin, Clock, Users, Gift, Heart, Menu, X } from 'lucide-react';
 
 interface EventsPageProps {
   onBack: () => void;
@@ -8,6 +8,8 @@ interface EventsPageProps {
 }
 
 const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -41,23 +43,24 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout }) =>
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg`}>
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <div className="flex items-center h-16 sm:h-18 md:h-20 lg:h-24">
+          <div className="flex justify-between items-center h-16 sm:h-18 md:h-20 lg:h-24">
             <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
               <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18 rounded-full overflow-hidden bg-white p-1 shadow-md">
-                <img 
-                  src="/santahatsocietyupdate.png" 
-                  alt="Santa Hat Society Logo" 
+                <img
+                  src="/santahatsocietyupdate.png"
+                  alt="Santa Hat Society Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
               <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-bold text-gray-800 whitespace-nowrap">Santa Hat Society</span>
             </div>
-            
+
             {/* Desktop Navigation */}
-            <nav className="hidden sm:flex items-center space-x-1 md:space-x-2 lg:space-x-4 xl:space-x-6 2xl:space-x-8 ml-auto">
+            <nav className="hidden sm:flex items-center space-x-1 md:space-x-2 lg:space-x-4 xl:space-x-6 2xl:space-x-8">
               <button
                 onClick={() => {
                   onBack();
+                  setIsMenuOpen(false);
                   setTimeout(() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }, 0);
@@ -69,6 +72,7 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout }) =>
               <button
                 onClick={() => {
                   onNavigateToAbout();
+                  setIsMenuOpen(false);
                 }}
                 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium px-1 sm:px-2 whitespace-nowrap"
               >
@@ -83,8 +87,56 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout }) =>
                 Donate Now
               </button>
             </nav>
+
+            {/* Mobile Menu Button */}
+            <div className="sm:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-gray-700 hover:text-red-600 transition-colors duration-200 p-1"
+              >
+                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="sm:hidden bg-white/95 backdrop-blur-md border-t w-full">
+            <nav className="px-4 py-4 space-y-4">
+              <button
+                onClick={() => {
+                  onBack();
+                  setIsMenuOpen(false);
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }, 0);
+                }}
+                className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => {
+                  onNavigateToAbout();
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
+              >
+                About
+              </button>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2 border-b-2 border-red-600"
+              >
+                Events
+              </button>
+              <button className="w-full bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">
+                Donate Now
+              </button>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
