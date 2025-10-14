@@ -1,4 +1,4 @@
-runtime: nodejs22
+runtime: nodejs24
 
 handlers:
 - url: /static
@@ -16,4 +16,5 @@ handlers:
   secure: always
 
 env_variables:
+
   NODE_ENV: production
