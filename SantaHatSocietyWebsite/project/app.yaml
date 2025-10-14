@@ -1,19 +1,20 @@
 runtime: nodejs24
     
-     handlers:
-       # Handler for the static assets (JS, CSS, etc.) that Vite places in the 'dist/assets' folder.
-       - url: /assets
-         static_dir: dist/assets
-     
-       # Handler for other static files (images, fonts, etc.) that Vite copies
-       # from the 'public' folder to the root of the 'dist' folder.
-       - url: /(.*\.(?:png|jpg|jpeg|gif|svg|webp|ico))$
-         static_files: dist/\1
-         upload: dist/(.*\.(?:png|jpg|jpeg|gif|svg|webp|ico))$
-     
-       # Fallback for client-side routing. This serves your main index.html for any
-       # request that doesn't match a static file, allowing React Router to take over.
-       # This must be the last handler.
-       - url: /.*
-         static_files: dist/index.html
-         upload: dist/index.html
+handlers:
+# Handler for the static assets (JS, CSS, etc.) that Vite places in the 'dist/assets' folder.
+    - url: /assets
+     static_dir: dist/assets
+
+    # Handler for other static files (images, fonts, etc.) that Vite copies
+    # from the 'public' folder to the root of the 'dist' folder.
+    - url: /(.*\.(?:png|jpg|jpeg|gif|svg|webp|ico))$
+     static_files: dist/\1
+     upload: dist/(.*\.(?:png|jpg|jpeg|gif|svg|webp|ico))$
+
+# Fallback for client-side routing. This serves your main index.html for any
+# request that doesn't match a static file, allowing React Router to take over.
+# This must be the last handler.
+    - url: /.*
+     static_files: dist/index.html
+     upload: dist/index.html
+
