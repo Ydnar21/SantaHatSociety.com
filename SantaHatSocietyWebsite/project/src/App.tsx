@@ -270,54 +270,42 @@ function App() {
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-red-50"></div>
 
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-emerald-200/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-red-200/30 rounded-full blur-3xl animate-pulse delay-75"></div>
-        <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-red-300/20 rounded-full blur-2xl animate-pulse delay-150"></div>
-
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center py-8">
           <div className="space-y-8 sm:space-y-12">
             {/* Logo with modern styling */}
             <div className="inline-block animate-fade-in">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-red-400/20 blur-3xl rounded-full group-hover:blur-[100px] transition-all duration-500"></div>
-                <div className="relative bg-white/40 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/60">
-                  <img
-                    src="/santahatsocietyupdate.png"
-                    alt="Santa Hat Society Logo"
-                    className="h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 w-auto mx-auto relative"
-                  />
-                </div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-red-600/10 blur-3xl rounded-full"></div>
+                <img
+                  src="/santahatsocietyupdate.png"
+                  alt="Santa Hat Society Logo"
+                  className="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 w-auto mx-auto relative drop-shadow-2xl"
+                />
               </div>
             </div>
 
             {/* Main Content */}
-            <div className="space-y-6 sm:space-y-8 backdrop-blur-sm bg-white/30 rounded-3xl p-8 sm:p-12 shadow-xl border border-white/60">
+            <div className="space-y-6 sm:space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight px-2 tracking-tight">
                   Bringing Holiday Magic
                 </h1>
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-600 via-red-600 to-red-500 bg-clip-text text-transparent px-2 animate-gradient">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent px-2">
                   to Families in Need
                 </p>
               </div>
 
-              <div className="max-w-3xl mx-auto">
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed px-4 font-light">
-                  Every family deserves to experience the warmth and joy of the holiday season
-                </p>
-              </div>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 font-light">
+                Every family deserves to experience the warmth and joy of the holiday season
+              </p>
 
               <div className="flex justify-center items-center px-4 pt-4">
                 <button
                   onClick={() => scrollToSection('about')}
-                  className="group relative px-8 sm:px-10 py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-emerald-600 via-red-600 to-red-500 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white/50"
+                  className="group relative px-8 sm:px-10 py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-red-600 to-red-500 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
                 >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Learn More
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative z-10">Learn More</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
