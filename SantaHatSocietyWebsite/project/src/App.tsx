@@ -268,7 +268,7 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-red-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-red-50"></div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center py-8">
           <div className="space-y-8 sm:space-y-12">
