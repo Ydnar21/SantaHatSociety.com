@@ -268,37 +268,44 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-red-50 to-pink-50"></div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center py-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-red-50/30"></div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center py-8">
           <div className="space-y-8 sm:space-y-12">
-            {/* Logo */}
-            <div className="inline-block">
-              <img 
-                src="/santahatsocietyupdate.png" 
-                alt="Santa Hat Society Logo" 
-                className="h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 w-auto mx-auto"
-              />
+            {/* Logo with modern styling */}
+            <div className="inline-block animate-fade-in">
+              <div className="relative">
+                <div className="absolute inset-0 bg-red-600/10 blur-3xl rounded-full"></div>
+                <img
+                  src="/santahatsocietyupdate.png"
+                  alt="Santa Hat Society Logo"
+                  className="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 w-auto mx-auto relative drop-shadow-2xl"
+                />
+              </div>
             </div>
-            
+
             {/* Main Content */}
             <div className="space-y-6 sm:space-y-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight px-2">
-                Bringing Holiday Magic
-                <span className="block font-normal text-red-600">to Families in Need</span>
-              </h1>
-              
-              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
-                We believe every family deserves to experience the warmth and joy of the holiday season, 
-                regardless of their circumstances.
+              <div className="space-y-4">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight px-2 tracking-tight">
+                  Bringing Holiday Magic
+                </h1>
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent px-2">
+                  to Families in Need
+                </p>
+              </div>
+
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 font-light">
+                Every family deserves to experience the warmth and joy of the holiday season
               </p>
-              
-              <div className="flex justify-center items-center px-4">
+
+              <div className="flex justify-center items-center px-4 pt-4">
                 <button
                   onClick={() => scrollToSection('about')}
-                  className="text-red-600 px-6 sm:px-8 py-3 rounded-lg border border-red-600 hover:bg-red-50 transition-colors duration-200 font-medium text-sm sm:text-base"
+                  className="group relative px-8 sm:px-10 py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-red-600 to-red-500 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
                 >
-                  Learn More
+                  <span className="relative z-10">Learn More</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
