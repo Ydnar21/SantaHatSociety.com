@@ -216,7 +216,10 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout }) =>
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                          <button className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-medium text-sm sm:text-base">
+                          <button
+                            onClick={() => window.open('https://www.google.com', '_blank')}
+                            className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-medium text-sm sm:text-base"
+                          >
                             Save My Spot!
                           </button>
                           <button className="text-red-600 px-6 py-2 rounded-lg border border-red-600 hover:bg-red-50 transition-colors duration-200 font-medium text-sm sm:text-base">
