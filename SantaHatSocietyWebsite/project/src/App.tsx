@@ -293,16 +293,10 @@ function App() {
                 regardless of their circumstances.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto px-4">
+              <div className="flex justify-center items-center px-4">
                 <button
-                  onClick={() => window.open('https://www.google.com', '_blank')}
-                  className="w-full sm:w-auto bg-red-600 text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-red-700 transition-colors duration-200 font-medium text-sm sm:text-base"
-                >
-                  Donate Now
-                </button>
-                <button 
                   onClick={() => scrollToSection('about')}
-                  className="w-full sm:w-auto text-red-600 px-6 sm:px-8 py-3 rounded-lg border border-red-600 hover:bg-red-50 transition-colors duration-200 font-medium text-sm sm:text-base"
+                  className="text-red-600 px-6 sm:px-8 py-3 rounded-lg border border-red-600 hover:bg-red-50 transition-colors duration-200 font-medium text-sm sm:text-base"
                 >
                   Learn More
                 </button>
