@@ -247,7 +247,10 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout }) =>
             >
               Make a Donation
             </button>
-            <button className="w-full sm:w-auto text-red-600 px-8 py-3 rounded-lg border border-red-600 hover:bg-red-50 transition-colors duration-200 font-medium">
+            <button
+              onClick={() => window.open('https://www.google.com', '_blank')}
+              className="w-full sm:w-auto text-red-600 px-8 py-3 rounded-lg border border-red-600 hover:bg-red-50 transition-colors duration-200 font-medium"
+            >
               Contact Us
             </button>
           </div>
