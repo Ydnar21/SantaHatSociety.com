@@ -270,6 +270,13 @@ function App() {
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-red-50"></div>
 
+        {/* Development Badge */}
+        <div className="absolute top-20 right-4 sm:top-24 sm:right-8 z-10">
+          <div className="bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300">
+            <p className="text-xs sm:text-sm font-semibold whitespace-nowrap">Website Under Development - Elves</p>
+          </div>
+        </div>
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center py-8">
           <div className="space-y-8 sm:space-y-12">
             {/* Logo with modern styling */}
