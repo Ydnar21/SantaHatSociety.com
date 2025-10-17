@@ -111,7 +111,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onBack, onNavigateToEvents }) => 
               >
                 Events
               </button>
-              <button className="bg-red-600 text-white px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2 xl:px-6 xl:py-2.5 2xl:px-8 2xl:py-3 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl rounded-full hover:bg-red-700 transition-colors duration-200 font-medium whitespace-nowrap">
+              <button
+                onClick={() => window.open('https://www.google.com', '_blank')}
+                className="bg-red-600 text-white px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2 xl:px-6 xl:py-2.5 2xl:px-8 2xl:py-3 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl rounded-full hover:bg-red-700 transition-colors duration-200 font-medium whitespace-nowrap"
+              >
                 Donate Now
               </button>
             </nav>
@@ -159,7 +162,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onBack, onNavigateToEvents }) => 
               >
                 Events
               </button>
-              <button className="w-full bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">
+              <button
+                onClick={() => window.open('https://www.google.com', '_blank')}
+                className="w-full bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium"
+              >
                 Donate Now
               </button>
             </nav>
