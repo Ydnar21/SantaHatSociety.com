@@ -5,9 +5,10 @@ import { ArrowLeft, Calendar, MapPin, Clock, Users, Gift, Heart, Menu, X } from 
 interface EventsPageProps {
   onBack: () => void;
   onNavigateToAbout: () => void;
+  onNavigateToElfs?: () => void;
 }
 
-const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout }) => {
+const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout, onNavigateToElfs }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -83,6 +84,17 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout }) =>
               >
                 Events
               </button>
+              {onNavigateToElfs && (
+                <button
+                  onClick={() => {
+                    onNavigateToElfs();
+                    setIsMenuOpen(false);
+                  }}
+                  className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium px-1 sm:px-2 whitespace-nowrap"
+                >
+                  Meet the Elfs
+                </button>
+              )}
               <button
                 onClick={() => window.open('https://www.google.com', '_blank')}
                 className="bg-red-600 text-white px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2 xl:px-6 xl:py-2.5 2xl:px-8 2xl:py-3 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl rounded-full hover:bg-red-700 transition-colors duration-200 font-medium whitespace-nowrap"
@@ -134,6 +146,17 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout }) =>
               >
                 Events
               </button>
+              {onNavigateToElfs && (
+                <button
+                  onClick={() => {
+                    onNavigateToElfs();
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
+                >
+                  Meet the Elfs
+                </button>
+              )}
               <button
                 onClick={() => window.open('https://www.google.com', '_blank')}
                 className="w-full bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium"

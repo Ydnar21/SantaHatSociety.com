@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Heart, Gift, Users, Mail, Phone, MapPin, Menu, X, Star, Snowflake, Camera, ChevronLeft, ChevronRight } from 'lucide-react';
 import AboutPage from './components/AboutPage';
 import EventsPage from './components/EventsPage';
+import MeetTheElfsPage from './components/MeetTheElfsPage';
 import FallingSnowflakes from './components/FallingSnowflakes';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'events'>(() => {
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'events' | 'elfs'>(() => {
     const savedPage = sessionStorage.getItem('currentPage');
-    return (savedPage as 'home' | 'about' | 'events') || 'home';
+    return (savedPage as 'home' | 'about' | 'events' | 'elfs') || 'home';
   });
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -135,11 +136,15 @@ function App() {
   };
 
   if (currentPage === 'about') {
-    return <AboutPage onBack={() => setCurrentPage('home')} onNavigateToEvents={() => setCurrentPage('events')} />;
+    return <AboutPage onBack={() => setCurrentPage('home')} onNavigateToEvents={() => setCurrentPage('events')} onNavigateToElfs={() => setCurrentPage('elfs')} />;
   }
 
   if (currentPage === 'events') {
-    return <EventsPage onBack={() => setCurrentPage('home')} onNavigateToAbout={() => setCurrentPage('about')} />;
+    return <EventsPage onBack={() => setCurrentPage('home')} onNavigateToAbout={() => setCurrentPage('about')} onNavigateToElfs={() => setCurrentPage('elfs')} />;
+  }
+
+  if (currentPage === 'elfs') {
+    return <MeetTheElfsPage onBack={() => setCurrentPage('home')} onNavigateToAbout={() => setCurrentPage('about')} onNavigateToEvents={() => setCurrentPage('events')} />;
   }
 
   return (
@@ -183,6 +188,12 @@ function App() {
                 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium px-1 sm:px-2 whitespace-nowrap"
               >
                 Events
+              </button>
+              <button
+                onClick={() => setCurrentPage('elfs')}
+                className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium px-1 sm:px-2 whitespace-nowrap"
+              >
+                Meet the Elfs
               </button>
               <button
                 onClick={() => window.open('https://www.google.com', '_blank')}
@@ -234,6 +245,15 @@ function App() {
                 className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
               >
                 Events
+              </button>
+              <button
+                onClick={() => {
+                  setCurrentPage('elfs');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium py-2"
+              >
+                Meet the Elfs
               </button>
               <button
                 onClick={() => window.open('https://www.google.com', '_blank')}
