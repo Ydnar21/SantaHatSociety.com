@@ -27,7 +27,7 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout, onNa
       icon: Gift,
       color: 'bg-red-500'
     },
-
+];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-green-50">
