@@ -17,17 +17,17 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout, onNa
 
   const upcomingEvents = [
     {
-      /*
+      
       id: 1,
-      title: 'Holiday Gift Wrapping Workshop',
-      date: 'December 14, 2024',
-      time: '10:00 AM - 4:00 PM',
-      location: 'Dansville Community Center',
-      description: 'Join us for our annual gift wrapping workshop! Volunteers will help wrap presents for families in need. All supplies provided.',
+      title: '',
+      date: '',
+      time: '',
+      location: '',
+      description: '',
       icon: Gift,
       color: 'bg-red-500'
     },
-*/
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-green-50">
