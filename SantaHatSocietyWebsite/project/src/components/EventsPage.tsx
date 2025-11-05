@@ -17,6 +17,7 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout, onNa
 
   const upcomingEvents = [
     {
+      /*
       id: 1,
       title: 'Holiday Gift Wrapping Workshop',
       date: 'December 14, 2024',
@@ -26,18 +27,7 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack, onNavigateToAbout, onNa
       icon: Gift,
       color: 'bg-red-500'
     },
-    {
-      id: 2,
-      title: 'Christmas Food Drive Collection',
-      date: 'December 18, 2024',
-      time: '9:00 AM - 6:00 PM',
-      location: 'Multiple Locations',
-      description: 'Help us collect non-perishable food items for holiday meal boxes. Drop-off locations throughout Dansville.',
-      icon: Heart,
-      color: 'bg-green-600',
-      spots: 'Donations welcome'
-    }
-  ];
+*/
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-green-50">
