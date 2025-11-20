@@ -1,0 +1,14 @@
+runtime: nodejs24
+
+handlers:
+  - url: /assets
+    static_dir: dist/assets
+
+  - url: /(.*\.(?:png|jpg|jpeg|gif|svg|webp|ico))$
+    static_files: dist/\1
+    upload: dist/(.*\.(?:png|jpg|jpeg|gif|svg|webp|ico))$
+
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html
+
